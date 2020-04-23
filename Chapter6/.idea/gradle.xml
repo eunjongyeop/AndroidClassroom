@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/example6-1_textclock" />
             <option value="$PROJECT_DIR$/example6-2_chronometer" />
             <option value="$PROJECT_DIR$/example6-3_countdowntimer" />
+            <option value="$PROJECT_DIR$/example6-4_timepickterdatepicker" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
