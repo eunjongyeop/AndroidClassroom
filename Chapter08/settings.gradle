@@ -1,0 +1,4 @@
+rootProject.name='Chapter08'
+include ':app'
+include ':practice01_internalmemoryfileinputoutput'
+include ':practice02_practice8-1'

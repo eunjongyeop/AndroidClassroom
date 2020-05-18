@@ -1,0 +1,110 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/myLayout"
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        android:background="#FFFFAA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/profile1">
+        </ImageView>
+
+        <TextView
+            android:id="@+id/myName"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="이명규"
+            android:textSize="25dp"
+            android:gravity="center">
+        </TextView>
+
+        <TextView
+            android:id="@+id/mySangme"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="즐거운 앱프 수업 :D"
+            android:textSize="25dp"
+            android:gravity="center">
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/friend1Layout"
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        android:background="#FFFFAA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/profile2">
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="진예원"
+            android:textSize="25dp"
+            android:gravity="center">
+        </TextView>
+
+        <TextView
+            android:id="@+id/friend1Sangme"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="황원비 돼지? 되지?"
+            android:textSize="25dp"
+            android:gravity="center">
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/friend2Layout"
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        android:background="#FFFFAA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/profile3">
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="조주혁"
+            android:textSize="25dp"
+            android:gravity="center">
+        </TextView>
+
+        <TextView
+            android:id="@+id/friend2Sangme"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="음"
+            android:textSize="25dp"
+            android:gravity="center">
+        </TextView>
+
+    </LinearLayout>
+
+</LinearLayout>

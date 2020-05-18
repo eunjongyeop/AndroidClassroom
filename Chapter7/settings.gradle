@@ -1,0 +1,8 @@
+rootProject.name='Chapter7'
+include ':app'
+include ':exercise01_optionmenu'
+include ':exercise02_optionmenu'
+include ':practice7-1'
+include ':exercise03_contextmenu'
+include ':exercise04_toast'
+include ':exercise05_dialog'
