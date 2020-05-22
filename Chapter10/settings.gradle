@@ -1,0 +1,3 @@
+rootProject.name='Chapter10'
+include ':app'
+include ':ex01_practice10-1'

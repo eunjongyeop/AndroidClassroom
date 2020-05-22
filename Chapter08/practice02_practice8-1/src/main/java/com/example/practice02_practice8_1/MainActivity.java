@@ -38,24 +38,22 @@ public class MainActivity extends AppCompatActivity {
         final int month = calendar.get(Calendar.MONTH);
         int day = calendar.get(Calendar.DAY_OF_MONTH);
 
-        datePicker.init(2019, 0, 0, new DatePicker.OnDateChangedListener() {
+        // 앱이 처음 실행될때, 일기가 있으면 가져와서 출력
+        readAndWriteDiary(year, month, day);
+
+        datePicker.init(year, month, day, new DatePicker.OnDateChangedListener() {
             @Override
             public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                fileName = String.format("%d_%d_%d.txt", year, monthOfYear+1, dayOfMonth);
-                String str = readDiary(fileName);       // 선택된 날짜 이름을 가진 파일의 이름을 읽어와서 저장
-                editText.setText(str);                 // 읽어온 텍스트를 editText에 표시
-                btnWriter.setEnabled(true);             // 버튼 활성화
+                readAndWriteDiary(year, monthOfYear, dayOfMonth);
             }
         });
 
         btnWriter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
-                    FileOutputStream outFs = openFileOutput(fileName, Context.MODE_PRIVATE);
+                try(FileOutputStream outFs = openFileOutput(fileName, Context.MODE_PRIVATE);) {
                     String str = editText.getText().toString();
                     outFs.write(str.getBytes());
-                    outFs.close();
                     Toast.makeText(MainActivity.this, fileName+" 이 저장됨", Toast.LENGTH_SHORT).show();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -64,15 +62,37 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private String readDiary(String fileName) {
-        String dirayStr = null;
-        FileInputStream inFs;
+    private void readAndWriteDiary(int year, int month, int day) {
+        fileName = String.format("%d_%d_%d.txt", year, month+1, day);
+        String str = readDiary2(fileName);       // 선택된 날짜 이름을 가진 파일의 이름을 읽어와서 저장
+        editText.setText(str);                 // 읽어온 텍스트를 editText에 표시
+        btnWriter.setEnabled(true);             // 버튼 활성화
+    }
 
-        try {
-            inFs = openFileInput(fileName);
+    // 500byte가 넘어가면 짤림
+    private String readDiary1(String fileName) {
+        String dirayStr = null;
+
+        try(FileInputStream inFs = openFileInput(fileName)) {
             byte[] txt = new byte[500];
             inFs.read(txt);
-            inFs.close();
+            dirayStr = (new String(txt)).trim();
+            btnWriter.setText("수정하기");
+        } catch (IOException e) {
+            editText.setHint("일기 없음");
+            btnWriter.setText("새로 저장");
+        }
+
+        return dirayStr;
+    }
+
+    // 일기를 전부다 읽어 오는 메소드
+    private String readDiary2(String fileName) {
+        String dirayStr = null;
+
+        try(FileInputStream fis = openFileInput(fileName)) {
+            byte[] txt = new byte[fis.available()];     // 읽어올 데이터 길이 만큼의 배열을 생성
+            fis.read(txt);
             dirayStr = (new String(txt)).trim();
             btnWriter.setText("수정하기");
         } catch (IOException e) {
