@@ -15,7 +15,7 @@
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="숫자1"
-        android:inputType="textPersonName"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,13 +29,13 @@
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="숫자2"
-        android:inputType="textPersonName"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/EditTextNum1" />
 
     <Button
-        android:id="@+id/btnClacrate"
+        android:id="@+id/btnClaclate"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="더하기"
