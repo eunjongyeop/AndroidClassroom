@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/ex01_listview" />
             <option value="$PROJECT_DIR$/ex02_listview" />
             <option value="$PROJECT_DIR$/ex03_listview_addmodifydelete" />
+            <option value="$PROJECT_DIR$/ex04_listview_simpleadapter" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
