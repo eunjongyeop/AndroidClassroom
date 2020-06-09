@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     // ListView에 표시될 데이터
     ArrayList<String> titleData = getStringList("Title", 50);
-    ArrayList<String> contentsData = getStringList("Contents", 50;
+    ArrayList<String> contentsData = getStringList("Contents", 50);
 
 
     @Override
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         listView = findViewById(R.id.listView);
 
         // ListView에 표시할 데이터들을 합쳐 하나의 ArrayList 만들기
-        ArrayList<HashMap<String, String>> listViewData = new ArrayList<HashMap<String, String>>();
+        final ArrayList<HashMap<String, String>> listViewData = new ArrayList<HashMap<String, String>>();
         for(int i=0; i<titleData.size(); i++) {
             HashMap<String, String> hashMap = new HashMap<String, String>();
             hashMap.put("title", titleData.get(i));
@@ -42,9 +42,20 @@ public class MainActivity extends AppCompatActivity {
             listViewData.add(hashMap);
         }
 
+        // 키값 배열
+        String[] keys = {"title", "contents"};
+
+        // 한 항목에 해당하는 textView의 id값 배열
+        int[] ids = {android.R.id.text1, android.R.id.text2};
+
         // SimpleAdapter에 ListView를 구성할 View와 데이터를 합침.
         // SimpleAdapter(Context context, List<? extends Map<String, ?>> data, int resource, String[] from, int[] to)
-        SimpleAdapter adapter = SimpleAdapter(this, listViewData, );
+        SimpleAdapter adapter = new SimpleAdapter(
+                this, listViewData,
+                android.R.layout.simple_list_item_2,
+                keys,
+                ids
+                );
 
         // ListView에 ArrayAdapter 연결
         listView.setAdapter(adapter);
@@ -53,8 +64,8 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                textView.setText(dataArr[position]);
-                textView.setText(dataList.get(position));
+                // 화면 상단의 textView에 선택된 아이템의 내용을 출력함
+                textView.setText(titleData.get(position) + " : " + contentsData.get(position));
             }
         });
     }

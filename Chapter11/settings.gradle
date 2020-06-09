@@ -1,3 +1,6 @@
+include ':ex07_listview_customadapter02'
+include ':ex06_listview_customadapter01'
+include ':ex05_listview_simpleadapter'
 include ':ex04_listview_simpleadapter'
 include ':ex03_listview_addmodifydelete'
 include ':ex02_listview'
