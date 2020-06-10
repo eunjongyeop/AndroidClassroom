@@ -1,0 +1,3 @@
+include ':ex01_practice10-1_diy'
+include ':app'
+rootProject.name = "Review01"
