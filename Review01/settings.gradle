@@ -1,3 +1,4 @@
+include ':ex04_practice7_optionmenu'
 include ':ex03_practice3_inputoutputmenory'
 include ':ex02_practice10-2_diy'
 include ':ex01_practice10-1_diy'
