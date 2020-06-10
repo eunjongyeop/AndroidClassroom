@@ -12,6 +12,8 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/ex01_practice10-1_diy" />
+            <option value="$PROJECT_DIR$/ex02_practice10-2_diy" />
+            <option value="$PROJECT_DIR$/ex03_practice3_inputoutputmenory" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
