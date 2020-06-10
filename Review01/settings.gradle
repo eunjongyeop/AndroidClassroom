@@ -1,3 +1,5 @@
+include ':ex06_practice_test_02'
+include ':ex05_practice_test_01'
 include ':ex04_practice7_optionmenu'
 include ':ex03_practice3_inputoutputmenory'
 include ':ex02_practice10-2_diy'
