@@ -1,0 +1,4 @@
+include ':intentshpg'
+include ':calculatoreasy'
+include ':app'
+rootProject.name = "Test01"
